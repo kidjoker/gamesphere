@@ -138,7 +138,7 @@ export default function Login() {
                   {formik.isSubmitting ? "Submitting..." : "Login"}
                 </Button>
                 <div className="mt-4 text-center text-sm text-zinc-200">
-                  Don't have an account?{" "}
+                  Do not have an account?{" "}
                   <Link
                     href="/pages/signup"
                     className="underline text-zinc-300"

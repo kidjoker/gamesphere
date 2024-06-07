@@ -2,6 +2,7 @@
 
 import useAuth from "@/app/hooks/useAuth";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const BitcoinPayment = () => {
