@@ -2,6 +2,7 @@
 
 import useAuth from "@/app/hooks/useAuth";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Credits() {
   const score = 743;

@@ -157,7 +157,7 @@ export default function Login() {
         <div className="relative hidden md:block">
           <Link href="/">
             <Image
-              className="object-cover "
+              className="object-cover"
               fill={true}
               src="/Gamesphere.png"
               alt="bg-image"
