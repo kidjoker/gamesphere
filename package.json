@@ -44,6 +44,7 @@
     "react-social-media-embed": "^2.5.13",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5",
+    "sonner": "^1.4.41",
     "speakeasy": "^2.0.0",
     "stripe": "^15.9.0",
     "tailwind-merge": "^2.3.0",

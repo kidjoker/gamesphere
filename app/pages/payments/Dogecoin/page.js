@@ -24,8 +24,12 @@ const DogecoinPayment = () => {
               </div>
             </div>
             <div className="flex justify-around mb-4">
-              <button className="bg-gray-300 text-black rounded-lg px-4 py-2">Scan</button>
-              <button className="bg-gray-300 text-black rounded-lg px-4 py-2">Copy</button>
+              <button className="bg-gray-300 text-black rounded-lg px-4 py-2">
+                Scan
+              </button>
+              <button className="bg-gray-300 text-black rounded-lg px-4 py-2">
+                Copy
+              </button>
             </div>
             <div className="flex justify-center mb-4">
               <img
@@ -40,12 +44,14 @@ const DogecoinPayment = () => {
           </div>
         </div>
         <div className="relative hidden md:block">
-          <Image
-            className="object-cover"
-            fill={true}
-            src="/Gamesphere.png"
-            alt="bg-image"
-          />
+          <Link href="/">
+            <Image
+              className="object-cover"
+              fill={true}
+              src="/Gamesphere.png"
+              alt="bg-image"
+            />
+          </Link>
         </div>
       </div>
     </main>

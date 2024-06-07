@@ -17,6 +17,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function Signup() {
   const [mfaSecret, setMfaSecret] = useState("");
@@ -66,11 +67,14 @@ export default function Signup() {
     onSubmit: async (values, { setSubmitting, setErrors, resetForm }) => {
       setSubmitting(true);
       try {
-        const response = await axios.post("/api/signup", { ...values, mfaSecret });
+        const response = await axios.post("/api/signup", {
+          ...values,
+          mfaSecret,
+        });
         if (response.status === 200) {
-          alert("User created successfully!");
+          toast.success("User created successfully!");
           resetForm();
-          router.push('/pages/login');
+          router.push("/pages/login");
         } else {
           setErrors({ api: "Unexpected response status: " + response.status });
         }
@@ -214,12 +218,14 @@ export default function Signup() {
           </Card>
         </div>
         <div className="relative hidden md:block">
-          <Image
-            className="object-cover "
-            fill={true}
-            src="/Gamesphere.png"
-            alt="bg-image"
-          />
+          <Link href="/">
+            <Image
+              className="object-cover "
+              fill={true}
+              src="/Gamesphere.png"
+              alt="bg-image"
+            />
+          </Link>
         </div>
       </div>
     </main>

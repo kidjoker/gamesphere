@@ -15,6 +15,8 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { toast } from "sonner";
 
 export default function Login() {
   const router = useRouter();
@@ -37,9 +39,9 @@ export default function Login() {
       try {
         const response = await axios.post("/api/login", values);
         if (response.status === 200) {
-          alert("Login successful!");
-          localStorage.setItem('token', response.data.token);
-          router.push('/');
+          toast.success("Login successful!");
+          localStorage.setItem("token", response.data.token);
+          router.push("/");
         } else {
           setErrors({ api: "Unexpected response status: " + response.status });
         }
@@ -66,7 +68,9 @@ export default function Login() {
             <CardContent>
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-zinc-100">Email</Label>
+                  <Label htmlFor="email" className="text-zinc-100">
+                    Email
+                  </Label>
                   <Input
                     className="bg-zinc-800 text-zinc-100"
                     type="email"
@@ -83,7 +87,9 @@ export default function Login() {
                   ) : null}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-zinc-100">Password</Label>
+                  <Label htmlFor="password" className="text-zinc-100">
+                    Password
+                  </Label>
                   <Input
                     className="bg-zinc-800 text-zinc-100"
                     type="password"
@@ -131,7 +137,17 @@ export default function Login() {
                 >
                   {formik.isSubmitting ? "Submitting..." : "Login"}
                 </Button>
-                <p className="mt-4 text-xs text-slate-200">
+                <div className="mt-4 text-center text-sm text-zinc-200">
+                  Don't have an account?{" "}
+                  <Link
+                    href="/pages/signup"
+                    className="underline text-zinc-300"
+                    prefetch={false}
+                  >
+                    Sign up
+                  </Link>
+                </div>
+                <p className="mt-4 text-center text-xs text-slate-200">
                   @2023 All rights reserved
                 </p>
               </div>
@@ -139,12 +155,14 @@ export default function Login() {
           </Card>
         </div>
         <div className="relative hidden md:block">
-          <Image
-            className="object-cover "
-            fill={true}
-            src="/Gamesphere.png"
-            alt="bg-image"
-          />
+          <Link href="/">
+            <Image
+              className="object-cover "
+              fill={true}
+              src="/Gamesphere.png"
+              alt="bg-image"
+            />
+          </Link>
         </div>
       </div>
     </main>

@@ -40,12 +40,14 @@ export default function Credits() {
           </div>
         </div>
         <div className="relative hidden md:block">
-          <Image
-            className="object-cover"
-            fill={true}
-            src="/Gamesphere.png"
-            alt="bg-image"
-          />
+          <Link href="/">
+            <Image
+              className="object-cover"
+              fill={true}
+              src="/Gamesphere.png"
+              alt="bg-image"
+            />
+          </Link>
         </div>
       </div>
     </main>
