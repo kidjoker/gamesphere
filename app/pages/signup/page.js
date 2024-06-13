@@ -52,6 +52,7 @@ export default function Signup() {
       email: Yup.string().email("Invalid email address").required("Required"),
       password: Yup.string()
         .min(12, "Must be at least 12 characters")
+        .max(20, "Must be 20 characters or less")
         .matches(/[a-z]/, "Must contain at least one lowercase letter")
         .matches(/[A-Z]/, "Must contain at least one uppercase letter")
         .matches(/[0-9]/, "Must contain at least one number")
