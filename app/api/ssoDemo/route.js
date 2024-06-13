@@ -2,10 +2,8 @@ import dbConnect from '@/lib/mongoose';
 import User from '@/models/User';
 import authMiddleware from '@/lib/auth';
 import { NextResponse } from 'next/server';
-import { applyCors } from '@/lib/cors';
 
 const handler = async (req, res) => {
-  if (applyCors(req, res)) return;
 
   await dbConnect();
 
